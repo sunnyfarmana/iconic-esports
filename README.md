@@ -1,105 +1,93 @@
-Iconic Esports
+# ICONIC ESPORTS 🎮🇮🇳
+### Professional BGMI Esports Tournament Platform
 
-A full-stack, production-ready esports platform built with a scalable SaaS architecture.
-It supports role-based access, tournament management, real-time updates, and secure verification systems.
+**ICONIC ESPORTS** is a production-grade competitive esports tournament and matchmaking platform engineered specifically for **Battlegrounds Mobile India (BGMI)**. It bridges grassroots squads with franchised tier-1 esports organizations across India.
 
-🚀 Features
-🔐 Authentication & Authorization
-Single login system with role-based access:
-User
-Admin
-Tournament Organizer
-Sponsor
-Secure authentication using JWT
-Email verification (OTP + Magic Link)
-Password reset system
-👤 User Onboarding
-Multi-step onboarding flow:
-Select games (BGMI, Free Fire, Valorant)
-Enter IGN, UID, Role
-Upload profile proof (screenshot)
-Profile management system
-🆔 KYC Verification
-Integration with DigiLocker / Aadhaar APIs
-Admin approval workflow
-Fraud detection system
-Secure storage of sensitive data
-🏆 Tournament Engine
-Create and manage tournaments
-Support for:
-Single Elimination
-Round Robin
-Auto-generated brackets
-Match scheduling & results tracking
-⚡ Real-Time System
-Live match updates
-Notifications system
-Team communication (chat)
-Powered by WebSockets
-📊 Dashboards
-User Dashboard: stats, match history, performance
-Organizer Dashboard: tournament analytics
-Sponsor Dashboard: engagement & ROI tracking
-Admin Panel: full platform control
-💰 Payments & Monetization
-Integration with Razorpay
-Entry fees & prize pools
-Wallet system
-Transaction history
-🏗️ Tech Stack
-Frontend
-React / Next.js
-Tailwind CSS
-Backend
-Node.js (Express)
-Database
-PostgreSQL / Supabase
-Realtime
-WebSockets (Socket.io)
-Integrations
-Firebase (optional)
-Razorpay (payments)
-DigiLocker / Aadhaar (KYC)
-📂 Project Structure
-iconic-esports/
-│
-├── client/        # Frontend (React / Next.js)
-├── server/        # Backend (Node.js API)
-├── docs/          # API docs, architecture
-├── README.md
-⚙️ Installation & Setup
-1. Clone the repository
-git clone https://github.com/sunnyfarmana/iconic-esports.git
-cd iconic-esports
-2. Setup Backend
-cd server
-npm install
+---
+
+## ⚡ Key Highlights & Features
+
+1. **Official BMPS 2026 Grand Finals Integration:**
+   - 100% verified tournament data from JECC Jaipur (₹4 Crore prize pool, 18 LAN matches).
+   - Authentic standings, points, WWCD counts, and MVP accolades.
+2. **36 Verified Professional Indian BGMI Teams & 180+ Athletes:**
+   - Real-life rosters (Hero Xtreme GodLike, Divine Gaming, Vasista, Gods Reign, Team Apex Gaming, Orangutan, Team Tamilas, Versatile, Reckoning, SouL, Global Esports, Gladiators, Big Brother, Carnival, Entity, Hydra, Gujarat Tigers, etc.).
+   - Verified Character UIDs, official tags, and starter/substitute allocations.
+3. **Official BGMI 10-Point Scoring Engine:**
+   - WWCD: 10 pts | 2nd: 6 pts | 3rd: 5 pts | 4th: 4 pts | 5th: 3 pts | 6th: 2 pts | 7th–8th: 1 pt | 9th–16th: 0 pts.
+   - 1 point per finish (kill).
+   - Strict tiebreaker hierarchy: Total Points $\rightarrow$ WWCDs $\rightarrow$ Placement Points $\rightarrow$ Finish Points.
+4. **Time-Gated Anti-Leak Room Credentials:**
+   - Custom Room ID and Password are protected and released exclusively to verified roster athletes assigned to that specific match lobby.
+5. **Slot Mapping Hub (Slots 1–25):**
+   - Slot #1 reserved strictly for Tournament Host & Official Referees.
+   - Atomic concurrency protection preventing double-booking during registration.
+6. **Multi-Role Experience:**
+   - **Player Panel:** Character UID identity, roster management, squad registration.
+   - **Organizer Panel:** Match room scheduling, result submission, evidence uploads.
+   - **Admin Control Room:** Platform analytics, organizer approval, user role oversight, audit logs.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Frontend:** React 18, Vite, TypeScript, Tailwind CSS, Lucide Icons, Framer Motion
+- **Backend:** Node.js, Express, TypeScript, Socket.IO, Cookie-Parser, JWT, bcryptjs
+- **Database & ORM:** Prisma ORM connected to **Supabase PostgreSQL** with connection pooling
+- **Security:** HTTP-only cookies, verified server-side role resolution, anti-leak room credential gates
+
+---
+
+## 🚀 Quick Start Guide
+
+### 1. Installation
+```bash
+npm run install:all
+```
+
+### 2. Configure Environment Variables
+Copy `.env.example` to `.env` in the server directory:
+```bash
+cp server/.env.example server/.env
+```
+Ensure your `DATABASE_URL` (Supabase connection string) and `JWT_SECRET` are set.
+
+### 3. Seed Verified BMPS 2026 & 36 Squads
+```bash
+npm run seed
+```
+
+### 4. Run Automated Test Suite
+```bash
+npm --prefix server test
+```
+
+### 5. Launch Development Environment
+```bash
 npm run dev
-3. Setup Frontend
-cd client
-npm install
-npm run dev
-🔐 Environment Variables
+```
+- Client runs at: `http://localhost:5173`
+- Backend API runs at: `http://localhost:5000`
 
-Create a .env file in both client and server:
+### 6. Build for Production
+```bash
+npm run build
+```
 
-🧠 System Architecture
-Role-based access control (RBAC)
-RESTful API design
-Modular backend structure
-Scalable database schema
-Real-time event-driven system
-🚧 Future Enhancements
-AI-based fraud detection
-Advanced matchmaking system (ELO ranking)
-Mobile app version
-Live streaming integration
-Leaderboard optimization
-🤝 Contributing
+---
 
-Contributions are welcome!
-Feel free to fork the repo and submit a pull request.
+## 🔑 Pre-Configured Verified Staff & Test Accounts
 
-📜 License
+| Role | Email / Identifier | Password | Details |
+| :--- | :--- | :--- | :--- |
+| **Platform Administrator** | `admin@kraftonindiaesports.com` | `admin123` | Full administrative oversight & audit access |
+| **Official League Referee** | `referee@kraftonindiaesports.com` | `password123` | Match room operations & result verification |
+| **BMPS Champion Captain** | `manya@godlike.in` | `password123` | Hero Xtreme GodLike Captain (IGN: `GODL Manya`, UID: `5124891024`) |
+| **Top Fragger / Eliminator** | `jonathan@apex.in` | `password123` | Team Apex Gaming (IGN: `APEX JONATHAN`, UID: `5123984019`) |
 
-This project is licensed under the MIT License.
+---
+
+## 🛡️ Security & Integrity Protocols
+- **Emulator Prohibited:** Strict mobile/tablet physical device enforcement.
+- **Roster Snapshotting:** Squad rosters are cryptographically snapshotted upon tournament registration approval.
+- **Role Verification:** Client-forged roles are overridden by live database state.
